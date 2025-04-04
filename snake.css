@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #4CAF50, #2E7D32);
+    color: white;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+canvas {
+    background: url('snakebackground.jpg'); /* Grass background */
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+#score {
+    font-size: 20px;
+    font-weight: bold;
+}
