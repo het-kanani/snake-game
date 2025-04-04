@@ -10,7 +10,7 @@ h1 {
 }
 
 canvas {
-    background: url('snakebackground.jpg'); /* Grass background */
+    background: url('snakebackground.jpg'); 
     display: block;
     margin: auto;
     border-radius: 10px;
