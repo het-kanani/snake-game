@@ -11,13 +11,11 @@ let direction = "RIGHT";
 let score = 0;
 
 const appleImg = new Image();
-appleImg.src = "apple.jpg"; // Use a real apple image
+appleImg.src = "apple.jpg"; 
 
-// Sound effects
 const eatSound = new Audio("eat.mp3.wav");
 const gameOverSound = new Audio("endgame.mp3.wav");
 
-// Text-to-speech function
 function speak(text) {
     let msg = new SpeechSynthesisUtterance(text);
     msg.rate = 1;
@@ -46,10 +44,9 @@ function spawnApple() {
 function drawGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw apple
+    
     ctx.drawImage(appleImg, apple.x, apple.y, box, box);
-
-    // Draw snake with gradient effect
+    
     snake.forEach((segment, index) => {
         let gradient = ctx.createLinearGradient(segment.x, segment.y, segment.x + box, segment.y + box);
         gradient.addColorStop(0, index === 0 ? "#228B22" : "#32CD32");
@@ -72,7 +69,6 @@ function moveSnake() {
     if (direction === "LEFT") head.x -= box;
     if (direction === "RIGHT") head.x += box;
 
-    // Check collision with apple
     if (head.x === apple.x && head.y === apple.y) {
         score++;
         document.getElementById("score").textContent = "Score: " + score;
@@ -83,13 +79,11 @@ function moveSnake() {
         snake.pop();
     }
 
-    // Check collision with walls
     if (head.x < 0 || head.x >= canvas.width || head.y < 0 || head.y >= canvas.height) {
         gameOver();
         return;
     }
 
-    // Check collision with itself
     for (let i = 1; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y) {
             gameOver();
